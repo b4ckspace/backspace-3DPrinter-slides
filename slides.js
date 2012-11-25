@@ -210,6 +210,7 @@ function updateSlides() {
   updateHash();
 };
 
+var last_built = false;
 function buildNextItem() {
   var toBuild  = slideEls[curSlide].querySelectorAll('.to-build');
 
@@ -218,6 +219,12 @@ function buildNextItem() {
   }
 
   toBuild[0].classList.remove('to-build', '');
+
+  if( last_built ) {
+    last_built.classList.add('built', '');
+  }
+
+  last_built = toBuild[0];
 
   if (isChromeVoxActive()) {
     speakAndSyncToNode(toBuild[0]);
