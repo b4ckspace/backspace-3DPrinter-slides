@@ -218,7 +218,7 @@ function buildNextItem() {
     return false;
   }
 
-  toBuild[0].classList.remove('to-build', '');
+  toBuild[0].classList.remove('to-build');
 
   if( last_built ) {
     last_built.classList.add('built', '');
